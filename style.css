@@ -1,0 +1,100 @@
+/* Estilo general retro tipo Winamp + Matrix */
+
+body {
+  background-color: #000000;
+  /*padding-top: 80px; /* para que el contenido no quede debajo de la navbar */
+  color: #00ff00;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
+}
+
+.intro-header {
+  background-color: #000000;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-left: 5rem;
+}
+
+.intro-text p {
+  font-size: 2.5rem;
+  margin: 0.4rem 0;
+  color: #00ff00;
+}
+
+.highlight {
+  vertical-align: bottom;
+  display: inline-block;
+  border-right: 2px solid #00ff00;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 1.5s steps(6), blink 0.8s step-end infinite;
+  color: #ffffff; /* Estilo tipo "matrix" */
+  font-family: 'Courier New', monospace;
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 6ch; } /* 6 letras de "Julian" */
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Fondo estrellado */
+
+#stars-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+}
+
+
+/* Navbar retro tipo Winamp */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75); /* efecto glass */
+  backdrop-filter: blur(6px);
+  padding: 1rem 2rem;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 15px #00ff00;
+  border-bottom: 1px solid #00ff00;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li a {
+  text-decoration: none;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  color: #00ff00;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
+}
+
+.navbar li a:hover {
+  background-color: #ffffff;
+  color: #000;
+  border: 1px solid #00ff00;
+  box-shadow: 0 0 8px #ffffff;
+  transform: scale(1.05);
+}
+
