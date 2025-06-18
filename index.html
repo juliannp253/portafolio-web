@@ -6,111 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Julián Padrón | Desarrollador Backend</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
+<script src="script.js"></script>
+
 <body>
-    <canvas id="stars-canvas"></canvas>
-
-    <nav class="navbar">
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">Sobre mí</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#contact">Contacto</a></li>
-    </ul>
-    </nav>
-
-
-
+    <!--canvas id="stars-canvas"></canvas-->
+    
     <header class="intro-header">
         <div class="intro-text">
-            <p>Hi,</p>
-            <p>I´m <span class="highlight">Julian</span>,</p>
-            <p>Back-end developer.</p>
+            <p>I´m <span class="highlight">Julian Padron</span>,</p>
+            <h1>Back-end Developer</h1>
+           
+            <!--p>Back-end developer.</p-->
         </div>
     </header>
 
 
 
-    <script>
-        const canvas = document.getElementById('stars-canvas');
-        const ctx = canvas.getContext('2d');
-        let stars = [];
-        let shootingStars = [];
-
-        function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-
-        function createStars(count) {
-        stars = [];
-        for (let i = 0; i < count; i++) {
-            stars.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            radius: Math.random() * 1.5 + 0.3,
-            alpha: Math.random(),
-            delta: Math.random() * 0.02
-            });
-        }
-        }
-        createStars(300);
-
-        function drawStars() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (let s of stars) {
-            ctx.beginPath();
-            ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(255,255,255,${s.alpha})`;
-            ctx.fill();
-            s.alpha += s.delta;
-            if (s.alpha <= 0 || s.alpha >= 1) s.delta *= -1;
-        }
-        }
-
-        function createShootingStar() {
-        shootingStars.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height / 2,
-            length: Math.random() * 100 + 50,
-            speed: Math.random() * 10 + 6,
-            size: 1.5
-        });
-        }
-
-        function drawShootingStars() {
-        for (let i = shootingStars.length - 1; i >= 0; i--) {
-            let star = shootingStars[i];
-            ctx.beginPath();
-            ctx.moveTo(star.x, star.y);
-            ctx.lineTo(star.x - star.length, star.y + star.length);
-            ctx.strokeStyle = 'white';
-            ctx.lineWidth = star.size;
-            ctx.stroke();
-            star.x += star.speed;
-            star.y += star.speed;
-            if (star.x > canvas.width || star.y > canvas.height) {
-            shootingStars.splice(i, 1);
-            }
-        }
-        }
-
-        function animate() {
-        drawStars();
-        drawShootingStars();
-        requestAnimationFrame(animate);
-        }
-        animate();
-
-        setInterval(() => {
-        if (Math.random() < 0.3) {
-            createShootingStar();
-        }
-        }, 3000);
-    </script>
+    
 
 </body>
 
