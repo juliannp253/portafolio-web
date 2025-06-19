@@ -123,3 +123,44 @@ body {
     margin-top: 2rem;
   }
 }
+
+/* Skills section */
+.skills-section {
+  background-color: #121212; /* o el mismo que el body si prefieres */
+  padding: 4rem 5vw;
+}
+
+.skills-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+.skills-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  border-bottom: 2px solid #444;
+  padding-bottom: 0.5rem;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skill {
+  padding: 0.75rem 1.25rem;
+  background-color: #1f1f1f;
+  border: 1px solid #333;
+  border-radius: 8px;
+  font-weight: 500;
+  color: #ccc;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.skill:hover {
+  transform: scale(1.05);
+  background-color: #2a2a2a;
+}
