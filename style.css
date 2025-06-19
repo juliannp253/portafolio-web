@@ -1,101 +1,125 @@
-/* Estilo general retro tipo Winamp + Matrix */
-
+/* Global */
 body {
-  background-color: rgb(17, 17, 18);  /*padding-top: 80px; /* para que el contenido no quede debajo de la navbar */
+  background-color: rgb(17, 17, 18);
   color: #ffffff;
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
 }
 
+/* Sección Introducción */
 .intro-header {
-  
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-left: 5rem;
+  padding: 2rem 5vw;
+  box-sizing: border-box;
 }
 
-.intro-text p {
-  font-size: 2.5rem;
-  margin: 0.4rem 0;
-  color: #ffffff;
-}
-
-.highlight {
-  vertical-align: bottom;
-  display: inline-block;
-  border-right: 2px solid #ffffff;
-  white-space: nowrap;
-  overflow: hidden;
-  animation: typing 1.5s steps(6), blink 0.8s step-end infinite;
-  color: #ffffff; /* Estilo tipo "matrix" */
-  font-family: 'Poppins', sans-serif;
-}
-@keyframes typing {
-  from { width: 0; }
-  to { width: 13ch; } /* 6 letras de "Julian" */
-}
-
-@keyframes blink {
-  50% { border-color: transparent; }
-}
-
-/* Fondo estrellado */
-
-#stars-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100vw;
-  height: 100vh;
-  background: black; /* aquí sí va */
-
-
-}
-
-
-/* Navbar retro tipo Winamp */
-
-.navbar {
-  position: fixed;
-  top: 0;
+.intro-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
   width: 100%;
-  background: rgba(0, 0, 0, 0.75); /* efecto glass */
-  backdrop-filter: blur(6px);
-  padding: 1rem 2rem;
-  z-index: 1000;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.intro-text {
+  flex: 1 1 60%; /* que tome hasta 60% del ancho */
+  min-width: 280px;
+  /* quita max-width o ponla alta */
+  max-width: 100%;
+  width: 100%;
+}
+
+.line1 {
+  font-size: 4.5rem;
+  font-weight: 600;
+  margin-bottom: 0rem;
+}
+
+.line2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-top: 0rem;
+  margin-bottom: 0.1rem;
+}
+
+.text-line {
+  margin-top: 0.1rem;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+.italic-line {
+  font-style: italic;
+  font-size: 1rem;
+  color: #aaaaaa;
+}
+
+.intro-image {
+  flex: 1 1 35%; /* que tome hasta 35% del ancho */
   display: flex;
   justify-content: center;
-  box-shadow: 0 0 15px #00ff00;
-  border-bottom: 1px solid #00ff00;
+  min-width: 250px;
 }
 
-.navbar ul {
-  list-style: none;
+.intro-image img {
+  width: 100%;
+  max-width: 300px; /* para que no sea gigante, pero crezca */
+  border-radius: 12px;
+  box-shadow: 0 0 10px #f3f3f3;
+  object-fit: cover;
+}
+
+.social-icons {
+  margin-top: 1.5rem;
   display: flex;
-  gap: 2.5rem;
-  margin: 0;
-  padding: 0;
+  gap: 1rem;
+  align-items: center;
 }
 
-.navbar li a {
-  text-decoration: none;
-  font-family: 'Courier New', monospace;
-  font-size: 1rem;
-  color: #00ff00;
-  padding: 0.5rem 1rem;
-  border-radius: 30px;
-  transition: all 0.25s ease;
-  border: 1px solid transparent;
+.social-icons a img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  filter: brightness(0) invert(1); /* Blanco en fondo oscuro */
 }
 
-.navbar li a:hover {
-  background-color: #ffffff;
-  color: #000;
-  border: 1px solid #00ff00;
-  box-shadow: 0 0 8px #ffffff;
-  transform: scale(1.05);
+.social-icons a:hover img {
+  transform: scale(1.15);
+  opacity: 0.8;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+  .intro-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .intro-text {
+    align-items: center;
+  }
+
+  .line1 {
+    font-size: 2.2rem;
+  }
+
+  .line2 {
+    font-size: 1.6rem;
+  }
+
+  .text-line {
+    font-size: 1rem;
+  }
+
+  .intro-image {
+    margin-top: 2rem;
+  }
+}
